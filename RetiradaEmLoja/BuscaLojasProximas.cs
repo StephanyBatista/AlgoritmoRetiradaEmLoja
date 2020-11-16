@@ -20,7 +20,7 @@ namespace RetiradaEmLoja
             var lojasFiltradas = _filtraLojasDentroDoPlano.Filtrar(plano, localizacaoDasLojas);
 
             foreach (var loja in lojasFiltradas)
-                loja.Calcular(localizacaoDoCliente[0], localizacaoDoCliente[1]);
+                loja.CalcularAproximacao(localizacaoDoCliente[0], localizacaoDoCliente[1]);
 
             return lojasFiltradas.OrderBy(loja => loja.AproximacaoEmRelacaoAoCliente).Take(3).ToList();
         }
